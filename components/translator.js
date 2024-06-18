@@ -37,7 +37,7 @@ class Translator {
           Object.keys(americanToBritishSpelling).join("|") +
           "|" +
           Object.keys(americanToBritishTitles)
-            .map((word) => `\\b${word}(?=\\W+)`)
+            .map((word) => `\\b${word}(?![\\w\\.])`)
             .join("|") +
           "|" +
           "\\d+:\\d+",
