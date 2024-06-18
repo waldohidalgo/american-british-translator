@@ -14,23 +14,23 @@ El proyecto consiste en realizar un traductor de inglés americano a inglés bri
 
 El texto a traducir y el idioma se envían desde el cliente al servidor en el cuerpo de una petición POST en formato de objeto siendo el valor de la key **text** igual al texto que se desea traducir y el valor de la key **locale** igual a **british-to-american** o **american-to-british**. El servidor responde con diversos mensajes según corresponda:
 
-- 1. Cuando el texto ingresado posee traducción, dicha traducción se muestra en el área marcada para ello. El servidor responde con un objeto siendo el valor de la key **text** igual al texto a traducir enviado y el valor de la key **translation** igual al texto traducido.
+1. Cuando el texto ingresado posee traducción, dicha traducción se muestra en el área marcada para ello. El servidor responde con un objeto siendo el valor de la key **text** igual al texto a traducir enviado y el valor de la key **translation** igual al texto traducido.
 
-- 2. Si el texto esta en un idioma y se intenta traducir al mismo idioma entonces se envía lo siguiente:
+2. Si el texto esta en un idioma y se intenta traducir al mismo idioma entonces se envía lo siguiente:
 
-     > Everything looks good to me!
+   > Everything looks good to me!
 
-- 3. Si el texto que se desea traducir esta en blanco, entonces se envía el siguiente error:
+3. Si el texto que se desea traducir esta en blanco, entonces se envía el siguiente error:
 
-     > { error: 'No text to translate' }
+   > { error: 'No text to translate' }
 
-- 4. Si se pretende traducir a un idioma distinto del inglés americano o inglés británico pasando un argumento diferente de **british-to-american** o **american-to-british**, entonces se envía el siguiente error:
+4. Si se pretende traducir a un idioma distinto del inglés americano o inglés británico pasando un argumento diferente de **british-to-american** o **american-to-british**, entonces se envía el siguiente error:
 
-     > { error: 'Invalid value for locale field' }.
+   > { error: 'Invalid value for locale field' }.
 
-- 5. Si en la petición al servidor no estan presentes las keys **text** o **locale**, entonces se envía el siguiente error:
+5. Si en la petición al servidor no estan presentes las keys **text** o **locale**, entonces se envía el siguiente error:
 
-     > { error: 'Required field(s) missing' }.
+   > { error: 'Required field(s) missing' }.
 
 ## Tabla de Contenidos
 
