@@ -1,12 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 
-const expect = require("chai").expect;
 const cors = require("cors");
 
 const fccTestingRoutes = require("./routes/fcctesting.js");
 const runner = require("./test-runner");
 const userRoutes = require("./routes/api.js");
+const path = require("path");
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Index page (static HTML)
 app.route("/").get(function (req, res) {
-  res.sendFile(process.cwd() + "/views/index.html");
+  res.sendFile(path.resolve("views", "index.html"));
 });
 
 //For FCC testing purposes
